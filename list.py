@@ -27,11 +27,8 @@ def mark_as_completed():
         messagebox.showwarning("Warning", "You must select a task to mark as completed !")
 
 def on_select(event):
-    # Reset the color of all items
     for i in range(listbox.size()):
         listbox.itemconfig(i, {'bg':'white'})
-    
-    # Highlight the selected item
     try:
         selected_task_index = listbox.curselection()[0]
         listbox.itemconfig(selected_task_index, {'bg':'yellow'})
@@ -39,11 +36,10 @@ def on_select(event):
         pass
 
     
-# Create the main window
+#mainWindow
 root = tk.Tk()
 root.title("To-Do List")
 
-# Create the GUI components
 frame = tk.Frame(root)
 frame.pack(padx=20, pady=10)
 
